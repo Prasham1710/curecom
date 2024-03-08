@@ -5,7 +5,7 @@ export const metadata = {
   title: "Add Product - COdecure",
 };
 async function addProduct(formData: FormData) {
-"use server"
+"use server";
  const name = formData.get("name")?.toString();
   const description = formData.get("description")?.toString();
   const imageUrl = formData.get("imageUrl")?.toString();
