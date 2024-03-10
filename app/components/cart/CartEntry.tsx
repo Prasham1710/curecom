@@ -10,11 +10,12 @@ interface CartEntryProps {
   cartItem: CartItemWithProduct;
   setProductQuantity: (productId: string, quantity: number) => Promise<void>;
 }
-    
+
 export default function CartEntry({
-  cartItem: { product, quantity },setProductQuantity
+  cartItem: { product, quantity },
+  setProductQuantity,
 }: CartEntryProps) {
-    const [isPending, startTransition] = useTransition();
+  const [isPending, startTransition] = useTransition();
   const quantityOptions: JSX.Element[] = [];
   for (let i = 1; i <= 99; i++) {
     quantityOptions.push(
@@ -33,7 +34,7 @@ export default function CartEntry({
           height={200}
           className="rounded-lg"
         />
-        <div>
+        <div className="p-3">
           <Link
             href={"components/products/" + product.id}
             className="font-bold"
