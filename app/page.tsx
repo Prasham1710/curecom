@@ -12,7 +12,7 @@ export default async function Home({
 }: HomeProps) {
   const currentPage = parseInt(page);
 
-  const pageSize = 6;
+  const pageSize = 10;
   const heroItemCount = 1;
 
   const totalItemCount = await prisma.product.count();
@@ -31,6 +31,7 @@ export default async function Home({
       {currentPage === 1 && (
         <div className="hero rounded-xl bg-base-200">
           <div className="hero-content flex-col lg:flex-row">
+           
             <Image
               src={products[0].imageUrl}
               alt={products[0].name}
@@ -48,13 +49,13 @@ export default async function Home({
               >
                 Check it out
               </Link>
-              ;
+              
             </div>
           </div>
         </div>
       )}
 
-      <div className="my-4 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="my-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
         {(currentPage === 1 ? products.slice(1) : products).map((product) => (
           <ProductCard product={product} key={product.id} />
         ))}
