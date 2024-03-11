@@ -12,7 +12,7 @@ export default function AddToCartButton({productId, incrementProductQuantity}: A
 return (
   <div className="flex items-center gap-2">
     <button
-      className="btn-primary btn"
+      className="bg-blue-200 btn"
       onClick={() => {
         setSuccess(false);
         startTransition(async () => {

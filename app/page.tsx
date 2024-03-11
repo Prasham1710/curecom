@@ -28,34 +28,9 @@ export default async function Home({
 
   return (
     <div className="flex flex-col items-center">
-      {currentPage === 1 && (
-        <div className="hero rounded-xl bg-base-200">
-          <div className="hero-content flex-col lg:flex-row">
-           
-            <Image
-              src={products[0].imageUrl}
-              alt={products[0].name}
-              width={400}
-              height={800}
-              className="w-full max-w-sm rounded-lg shadow-2xl"
-              priority
-            />
-            <div>
-              <h1 className="text-5xl font-bold">{products[0].name}</h1>
-              <p className="py-6">{products[0].description}</p>
-              <Link
-                href={"components/products/" + products[0].id}
-                className="btn-primary btn"
-              >
-                Check it out
-              </Link>
-              
-            </div>
-          </div>
-        </div>
-      )}
+      
 
-      <div className="my-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
+      <div className="my-4 grid grid-cols-1 bg-purple-100 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
         {(currentPage === 1 ? products.slice(1) : products).map((product) => (
           <ProductCard product={product} key={product.id} />
         ))}

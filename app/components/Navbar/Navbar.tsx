@@ -19,13 +19,22 @@ export default async function Navbar() {
   const session = await getServerSession(authOptions);
   const cart = await getCart();
   return (
-    <div className="bg-base-100">
+    <div className="bg-blue-400">
       <div className="navbar m-auto max-w-7xl flex-col gap-2 sm:flex-row">
         <div className="flex-1">
           <Link href="/" className="btn-ghost btn text-xl normal-case">
             Codecure
           </Link>
         </div>
+        <div>
+        
+        </div>
+        <Link className="btn-ghost text-lg btn" href="/">
+          Home
+        </Link>
+        <Link className="btn-ghost text-lg btn" href="/">
+          Consunlt doctor
+        </Link>
         <div className="flex-none gap-2">
           <form action={searchProducts}>
             <div className="form-control">
@@ -37,7 +46,8 @@ export default async function Navbar() {
             </div>
           </form>
           <ShoppingCartButton cart={cart} />
-          <UserMenuButton session={session}/>
+          <UserMenuButton session={session} />
+          <button className="p-3">Rx</button>
         </div>
       </div>
     </div>
